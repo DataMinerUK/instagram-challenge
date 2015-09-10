@@ -1,0 +1,5 @@
+<% if @image.get_tags.any? %>
+  <% @image.get_tags.each do |tag| %>
+    <%= link_to tag[1], tag_path(tag[0].id) %>
+  <% end %>
+<% end %>
