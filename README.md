@@ -23,6 +23,8 @@ Go to localhost:3000
 Run Rspec
 
 ```sh
+bin/rake db:create RAILS_ENV=test
+bin/rake db:migrate RAILS_ENV=test
 rspec
 ```
 
@@ -56,5 +58,5 @@ rspec
 * When using FactoryGirl you need to use a [sequence](https://github.com/DataMinerUK/instagram-challenge/blob/master/spec/factories/user.rb#L3-L5) for properties which need to be unique
 * For password confirmation you need to [confirm](https://github.com/DataMinerUK/instagram-challenge/blob/master/spec/factories/user.rb#L17-L19) a FactoryGirl user after creation
 * To generate a migration for a join table you need to use `bin/rails g migration CreateJoinTableImageTag image tag` where the classes to be associated *have* to be in alphabetical order
-* When adding a username to a Devise user you need to add [this](bin/rails g migration CreateJoinTableImageTag image tag) to the application controller
+* When adding a username to a Devise user you need to add [this](https://github.com/DataMinerUK/instagram-challenge/blob/master/app/controllers/application_controller.rb#L6-L12) to the application controller
 * You have to write you own [method](https://github.com/DataMinerUK/instagram-challenge/blob/master/app/models/image.rb#L27-L35) for the many-to-many association for creating tags or adding the image association to one
